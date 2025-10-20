@@ -1,5 +1,5 @@
-DMISMN/'Echelle Minus Nâˆž01',05.2
-FILNAM/'Echelle Minus Nâˆž01',05.2
+DMISMN/'Echelle Z+ N°01 5CP',05.2
+FILNAM/'Echelle Z+ N°01 5CP',05.2
 DV(0)=DMESWV/'86,2,29897'
 UNITS/MM,ANGDEC
 DECPL/ALL,DEFALT
@@ -24,36 +24,36 @@ $$
 $$ ~~~~~ Historique modif ~~~~~~
 $$
 $$
-$$ 20211027_16h29 : signes inversÃˆs. RePyhton aprÃ‹s remise des valeurs d'orogine
-$$                  (Face avant X:2 & Z:2.5  ;  Face arriÃ‹re X:3.5 & Z:1.0 )
+$$ 20211027_16h29 : signes inversés. RePyhton après remise des valeurs d'orogine
+$$                  (Face avant X:2 & Z:2.5  ;  Face arrière X:3.5 & Z:1.0 )
 $$
-$$ 20211027_15h05 : python pour dÃˆcalage x et z (Face avant X:-2 & Z:-2.5  ;
-$$                  Face arriÃ‹re X:-3.5 & Z:-1.0 )
+$$ 20211027_15h05 : python pour décalage x et z (Face avant X:-2 & Z:-2.5  ;
+$$                  Face arrière X:-3.5 & Z:-1.0 )
  
  
-$$DATDEF/FA(PLN_SphÃ‹res),DAT(A)
+$$DATDEF/FA(PLN_Sphères),DAT(A)
 $$DATDEF/FA(LINE001),DAT(E)
-$$DATDEF/FA(PNT007_DÃˆcalÃˆ),DAT(C)
-$$D(RepÃ‹re)=DATSET/DAT(A),-YDIR,YORIG,DAT(E),XDIR,ZORIG,DAT(C),XORIG
+$$DATDEF/FA(PNT007_Décalé),DAT(C)
+$$D(Repère)=DATSET/DAT(A),-YDIR,YORIG,DAT(E),XDIR,ZORIG,DAT(C),XORIG
 $$
 $$
 $$
 $$T(Plan_0.15)=TOL/FLAT,0.15
-$$T(PositionY_Â±0.075)=TOL/CORTOL,YAXIS,-0.075,0.075
+$$T(PositionY_±0.075)=TOL/CORTOL,YAXIS,-0.075,0.075
 $$<CONSTRUCT_PLANE name = "PLN_A02 = Assistant pour la construction:  PNTA02H1 $
 - PNTA02H2- PNTA02H3- PNTA02H4- PNTA02H5">
 $$F(PLN_A02)=FEAT/PLANE,CART,-1058,-2,131,0,-1,0
 $$CONST/PLANE,F(PLN_A02),BF,FA(PNTA02H1),FA(PNTA02H2),FA(PNTA02H3),FA(PNTA02H4)$
 ,FA(PNTA02H5),FA(PNTA02H6),FA(PNTA02H2),FA(PNTA02H4),FA(PNTA02H3),FA(PNTA02H1)
-$$OUTPUT/FA(PLN_A02),TA(Plan_0.15),TA(PositionY_Â±0.075)
+$$OUTPUT/FA(PLN_A02),TA(Plan_0.15),TA(PositionY_±0.075)
 $$<\CONSTRUCT_PLANE >
  
  
 $$ Sous programme pour extraction des vecteurs des plans
-$$CALL/EXTERN,DMIS,'C:\LK\Programs\Formation\Echelle Sept 2021\SousPRG_RÃˆcupere$
+$$CALL/EXTERN,DMIS,'C:\LK\Programs\Formation\Echelle Sept 2021\SousPRG_Récupere$
 r_PLANS_Coord_Vect.dmi',PLNA02
  
-$$CALL/EXTERN,DMIS,'C:\LK\Programs\Formation\Echelle Sept 2021\SousPRG_RÃˆcupere$
+$$CALL/EXTERN,DMIS,'C:\LK\Programs\Formation\Echelle Sept 2021\SousPRG_Récupere$
 r_PLANS_Coord_Vect.dmi',PLNA03
  
  
@@ -149,75 +149,75 @@ $$<\MEAS_POINT >
 $$<\MULTI_INSPECT = Groupe - PNT004>
  
  
-$$<CONSTRUCT_POINT name = "PNT001_dÃˆcalÃˆ = Point dÃˆcalÃˆ:  PNT001 ">
-F(PNT001_dÃˆcalÃˆ)=FEAT/POINT,CART,0,0,0,0,-1,0
-CONST/POINT,F(PNT001_dÃˆcalÃˆ),MOVEPT,FA(PNT001),0,-3,0
+$$<CONSTRUCT_POINT name = "PNT001_décalé = Point décalé:  PNT001 ">
+F(PNT001_décalé)=FEAT/POINT,CART,0,0,0,0,-1,0
+CONST/POINT,F(PNT001_décalé),MOVEPT,FA(PNT001),0,-3,0
 $$<\CONSTRUCT_POINT >
  
  
-$$<CONSTRUCT_POINT name = "PNT002_dÃˆcalÃˆ = Point dÃˆcalÃˆ:  PNT002 ">
-F(PNT002_dÃˆcalÃˆ)=FEAT/POINT,CART,0,0,-1,0,-1,0
-CONST/POINT,F(PNT002_dÃˆcalÃˆ),MOVEPT,FA(PNT002),0,-12,0
+$$<CONSTRUCT_POINT name = "PNT002_décalé = Point décalé:  PNT002 ">
+F(PNT002_décalé)=FEAT/POINT,CART,0,0,-1,0,-1,0
+CONST/POINT,F(PNT002_décalé),MOVEPT,FA(PNT002),0,-12,0
 $$<\CONSTRUCT_POINT >
  
-$$<CONSTRUCT_POINT name = "PNT003_dÃˆcalÃˆ = Point dÃˆcalÃˆ:  PNT003 ">
-F(PNT003_dÃˆcalÃˆ)=FEAT/POINT,CART,0,-1,0,0,-1,0
-CONST/POINT,F(PNT003_dÃˆcalÃˆ),MOVEPT,FA(PNT003),0,-12,0
+$$<CONSTRUCT_POINT name = "PNT003_décalé = Point décalé:  PNT003 ">
+F(PNT003_décalé)=FEAT/POINT,CART,0,-1,0,0,-1,0
+CONST/POINT,F(PNT003_décalé),MOVEPT,FA(PNT003),0,-12,0
 $$<\CONSTRUCT_POINT >
  
-$$<CONSTRUCT_POINT name = "PNT004_dÃˆcalÃˆ = Point dÃˆcalÃˆ:  PNT004 ">
-F(PNT004_dÃˆcalÃˆ)=FEAT/POINT,CART,0,-2,1,0,-1,0
-CONST/POINT,F(PNT004_dÃˆcalÃˆ),MOVEPT,FA(PNT004),0,-3,0
-$$<\CONSTRUCT_POINT >
- 
- 
-$$<CONSTRUCT_POINT name = "PNT006_DÃˆcalÃˆ = Point dÃˆcalÃˆ:  PNT006 ">
-F(PNT006_DÃˆcalÃˆ)=FEAT/POINT,CART,0,0,1,0,0,1
-CONST/POINT,F(PNT006_DÃˆcalÃˆ),MOVEPT,FA(PNT006),0,0,1.24
-$$<\CONSTRUCT_POINT >
- 
-$$<CONSTRUCT_POINT name = "PNT005_DÃˆcalÃˆ = Point dÃˆcalÃˆ:  PNT005 ">
-F(PNT005_DÃˆcalÃˆ)=FEAT/POINT,CART,1,0,1,0,0,1
-CONST/POINT,F(PNT005_DÃˆcalÃˆ),MOVEPT,FA(PNT005),0,0,1.24
+$$<CONSTRUCT_POINT name = "PNT004_décalé = Point décalé:  PNT004 ">
+F(PNT004_décalé)=FEAT/POINT,CART,0,-2,1,0,-1,0
+CONST/POINT,F(PNT004_décalé),MOVEPT,FA(PNT004),0,-3,0
 $$<\CONSTRUCT_POINT >
  
  
+$$<CONSTRUCT_POINT name = "PNT006_Décalé = Point décalé:  PNT006 ">
+F(PNT006_Décalé)=FEAT/POINT,CART,0,0,1,0,0,1
+CONST/POINT,F(PNT006_Décalé),MOVEPT,FA(PNT006),0,0,1.24
+$$<\CONSTRUCT_POINT >
  
-$$<CONSTRUCT_POINT name = "PNT007_DÃˆcalÃˆ = Point dÃˆcalÃˆ:  PNT007 ">
-F(PNT007_DÃˆcalÃˆ)=FEAT/POINT,CART,2,0,0,1,0,0
-CONST/POINT,F(PNT007_DÃˆcalÃˆ),MOVEPT,FA(PNT007),7,0,0
+$$<CONSTRUCT_POINT name = "PNT005_Décalé = Point décalé:  PNT005 ">
+F(PNT005_Décalé)=FEAT/POINT,CART,1,0,1,0,0,1
+CONST/POINT,F(PNT005_Décalé),MOVEPT,FA(PNT005),0,0,1.24
 $$<\CONSTRUCT_POINT >
  
  
  
-$$<CONSTRUCT_PLANE name = "PLN_SphÃ‹res = Assistant pour la construction:  PNT00$
-1_DÃˆcalÃˆ - PNT002_DÃˆcalÃˆ- PNT003_DÃˆcalÃˆ- PNT004_DÃˆcalÃˆ">
-F(PLN_SphÃ‹res)=FEAT/PLANE,CART,0,0,0,0,-1,0
-CONST/PLANE,F(PLN_SphÃ‹res),BF,FA(PNT001_DÃˆcalÃˆ),FA(PNT002_DÃˆcalÃˆ),FA(PNT003_DÃˆc$
-alÃˆ),FA(PNT004_DÃˆcalÃˆ)
+$$<CONSTRUCT_POINT name = "PNT007_Décalé = Point décalé:  PNT007 ">
+F(PNT007_Décalé)=FEAT/POINT,CART,2,0,0,1,0,0
+CONST/POINT,F(PNT007_Décalé),MOVEPT,FA(PNT007),7,0,0
+$$<\CONSTRUCT_POINT >
+ 
+ 
+ 
+$$<CONSTRUCT_PLANE name = "PLN_Sphères = Assistant pour la construction:  PNT00$
+1_Décalé - PNT002_Décalé- PNT003_Décalé- PNT004_Décalé">
+F(PLN_Sphères)=FEAT/PLANE,CART,0,0,0,0,-1,0
+CONST/PLANE,F(PLN_Sphères),BF,FA(PNT001_Décalé),FA(PNT002_Décalé),FA(PNT003_Déc$
+alé),FA(PNT004_Décalé)
 $$<\CONSTRUCT_PLANE >
  
 $$<CONSTRUCT_LINE name = "LINE001 = Construire un meilleur ajustement :  PNT006$
-_DÃˆcalÃˆ - PNT005_DÃˆcalÃˆ">
+_Décalé - PNT005_Décalé">
 F(LINE001)=FEAT/LINE,BND,CART,0,0,1,1,0,1,0,0,-1
-CONST/LINE,F(LINE001),BF,FA(PNT006_DÃˆcalÃˆ),FA(PNT005_DÃˆcalÃˆ)
+CONST/LINE,F(LINE001),BF,FA(PNT006_Décalé),FA(PNT005_Décalé)
 $$<\CONSTRUCT_LINE >
  
  
  
-DATDEF/FA(PLN_SphÃ‹res),DAT(A)
+DATDEF/FA(PLN_Sphères),DAT(A)
 DATDEF/FA(LINE001),DAT(B)
-DATDEF/FA(PNT007_DÃˆcalÃˆ),DAT(C)
-D(RÃˆfÃˆrence_SphÃ‹res_Avant)=DATSET/DAT(A),-YDIR,YORIG,DAT(B),XDIR,ZORIG,DAT(C),X$
+DATDEF/FA(PNT007_Décalé),DAT(C)
+D(Référence_Sphères_Avant)=DATSET/DAT(A),-YDIR,YORIG,DAT(B),XDIR,ZORIG,DAT(C),X$
 ORIG
  
-SAVE/DA(RÃˆfÃˆrence_SphÃ‹res_Avant)
-RECALL/DA(RÃˆfÃˆrence_SphÃ‹res_Avant)
+SAVE/DA(Référence_Sphères_Avant)
+RECALL/DA(Référence_Sphères_Avant)
  
 $$PAUSE
-$$RECALL/DA(RÃˆfÃˆrence_SphÃ‹res_Avant)
-$$D(Tempo_RÃˆfÃˆrence_SphÃ‹res_Avant)=TRANS/XORIG,2,ZORIG,2.5
-$$RECALL/DA(Tempo_RÃˆfÃˆrence_SphÃ‹res_Avant)
+$$RECALL/DA(Référence_Sphères_Avant)
+$$D(Tempo_Référence_Sphères_Avant)=TRANS/XORIG,2,ZORIG,2.5
+$$RECALL/DA(Tempo_Référence_Sphères_Avant)
  
 $$
 $$ **********************************************************
@@ -231,8 +231,9 @@ $$
  
 $$ ********** ASSOCIATION REF. CAO & REF. PIECE ************
 $$
-$$EQUATE/DA(RÃˆfÃˆrence_SphÃ‹res_Avant),CADCS,DID(Echelle_2020-09-09_TB2S_Ladder),$
+$$EQUATE/DA(Référence_Sphères_Avant),CADCS,DID(Echelle_2020-09-09_TB2S_Ladder),$
 '_Origin'
+ 
  
  
  
@@ -241,16 +242,7 @@ PAUSE
  
 //////////////////////////////////////////////////
  
-Mettre en place l'Ãˆchelle
+Mettre en place l'échelle
 //////////////////////////////////////////////////
- 
- 
- 
-MODE/AUTO,PROG,MAN
- 
-GOTO/CART,-1063,-20,200
 
 
-//////////////////////////////////////////////////
-Mesurer les bumpers ici ...
-//////////////////////////////////////////////////
