@@ -6,7 +6,6 @@ import math
 def dump_meas_code(PointName, Xcoord, Zcoord, orientation=-1.0):
     PointMeasurementCode = """$$<MULTI_INSPECT name = "Groupe - {POINT}">
     $$<MEAS_POINT name = "{POINT}: 0.00,0.00,0.00, 0.00,{ORIENTATION},0.00">
-    MODE/PROG,MAN
     F({POINT})=FEAT/POINT,CART,0,0,0,0,{ORIENTATION},0
     MEAS/POINT,F({POINT}),1
     PTMEAS/CART,{XCOORD},-2,{ZCOORD},0,{ORIENTATION},0
@@ -100,7 +99,7 @@ if __name__ == "__main__":
         Points03.append({'name':row['Point']+"03F3", 'x':row['X3'], 'z':row['Z3'], 'orientation':1.0})
         Points03.append({'name':row['Point']+"03F4", 'x':row['X4'], 'z':row['Z4'], 'orientation':1.0})
         if not math.isnan(row['X5']):
-            Points02.append({'name':row['Point']+"03F5", 'x':row['X5'], 'z':row['Z5'], 'orientation':1.0})
+            Points03.append({'name':row['Point']+"03F5", 'x':row['X5'], 'z':row['Z5'], 'orientation':1.0})
 
     print(Points03 )
 
@@ -108,11 +107,11 @@ if __name__ == "__main__":
     df = pd.read_csv("Odd_dist.csv", delimiter=';')
     print(df)
     Dist_odd = []
-    Dist_odd.append({"number":"04","offset":-df["04"][0]})
-    Dist_odd.append({"number":"06","offset":-df["04"][0]-df["06"][0]})
-    Dist_odd.append({"number":"08","offset":-df["04"][0]-df["06"][0]-df["08"][0]})
-    Dist_odd.append({"number":"10","offset":-df["04"][0]-df["06"][0]-df["08"][0]-df["10"][0]})
-    Dist_odd.append({"number":"12","offset":-df["04"][0]-df["06"][0]-df["08"][0]-df["10"][0]-df["12"][0]})
+    Dist_odd.append({"number":"04","offset":+df["04"][0]})
+    Dist_odd.append({"number":"06","offset":+df["04"][0]+df["06"][0]})
+    Dist_odd.append({"number":"08","offset":+df["04"][0]+df["06"][0]+df["08"][0]})
+    Dist_odd.append({"number":"10","offset":+df["04"][0]+df["06"][0]+df["08"][0]+df["10"][0]})
+    Dist_odd.append({"number":"12","offset":+df["04"][0]+df["06"][0]+df["08"][0]+df["10"][0]+df["12"][0]})
     print(Dist_odd)
 
     # Read the distances betweem even modules - we miss module 1
@@ -121,9 +120,9 @@ if __name__ == "__main__":
     Dist_even = []
     #distance are positive for even modules and negatives for odd modules due to orientation
     Dist_even.append({"number":"05","offset":df["05"][0]})
-    Dist_even.append({"number":"07","offset":df["05"][0]+df["07"][0]})
-    Dist_even.append({"number":"09","offset":df["05"][0]+df["07"][0]+df["09"][0]})
-    Dist_even.append({"number":"11","offset":df["05"][0]+df["07"][0]+df["09"][0]+df["11"][0]})
+    Dist_even.append({"number":"07","offset":df["05"][0]-df["07"][0]})
+    Dist_even.append({"number":"09","offset":df["05"][0]-df["07"][0]-df["09"][0]})
+    Dist_even.append({"number":"11","offset":df["05"][0]-df["07"][0]-df["09"][0]-df["11"][0]})
   
 
     # Generate points for all inserts
@@ -136,7 +135,9 @@ if __name__ == "__main__":
         for point in Points02:
             points.append({'name':point['name'][0]+dist['number']+'F'+point['name'].split('F')[1], 'z':point['z'], 'x':float(point['x'])+float(dist['offset']), 'orientation':point['orientation']})
      
-    print(points)
+    #print(points)
+    #for p in points:
+    #    print(p["name"])
     #exit()
      
     #points = [
